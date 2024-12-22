@@ -1,0 +1,6 @@
+- defaults:
+    link:
+      relink: true
+- link:
+    /etc/X11/xorg.conf.d/: sudo_conf/xorg.conf.d/
+
