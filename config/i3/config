@@ -9,6 +9,9 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
+# set gaps
+gaps inner 10
+
 set $mod Mod4
 
 # Set the german qwertz layout as default
