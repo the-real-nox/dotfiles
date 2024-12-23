@@ -1,0 +1,2 @@
+#! /bin/sh
+sudo ./install -c sudo_install.conf.yaml

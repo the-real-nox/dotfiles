@@ -2,3 +2,6 @@
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
+[submodule "themes/rofi-themes-collection"]
+	path = themes/rofi-themes-collection
+	url = https://github.com/lr-tech/rofi-themes-collection.git
