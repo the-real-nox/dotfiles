@@ -13,9 +13,6 @@ include ./conf/style.conf
 
 set $mod Mod4
 
-# Set the german qwertz layout as default
-exec --no-startup-id setxkbmap -layout de
-
 # Start picom
 exec --no-startup-id picom -b
 
