@@ -6,6 +6,6 @@
     ~/.config/i3: ./config/i3
     ~/.zshrc: ./config/zshrc
     ~/.config/picom/picom.conf: ./config/picom.conf
-    ~/.local/share/rofi/themes/theme.rasi: ./themes/rofi-themes-custom/simple-tokyonight-custom.rasi
+    ~/.local/share/rofi/themes/theme.rasi: ./themes/rofi-themes-custom/simple-dark.rasi
     ~/.config/rofi/config.rasi: ./config/rofi.rasi
     ~/.config/i3status: ./config/i3status
