@@ -10,21 +10,21 @@ general {
 # order += "run_watch DHCP"
 # order += "run_watch VPNC"
 # order += "path_exists VPN"
-order += "wireless wlan0"
-order += "ethernet eth0"
+order += "wireless _first_"
+order += "ethernet _first_"
 order += "battery 0"
 order += "cpu_temperature 0"
 order += "memory"
-order += "load"
+# order += "load"
 order += "tztime local"
 # order += "tztime berlin"
 
-wireless wlp0s20f3 {
+wireless _first_ {
         format_up = "W: (%quality at %essid, %bitrate) %ip"
         format_down = "W: down"
 }
 
-ethernet enp3s0 {
+ethernet _first_ {
         format_up = "E: %ip (%speed)"
         format_down = "E: down"
 }
