@@ -8,3 +8,4 @@
     ~/.config/picom/picom.conf: ./config/picom.conf
     ~/.local/share/rofi/themes/theme.rasi: ./themes/rofi-themes-custom/simple-tokyonight-custom.rasi
     ~/.config/rofi/config.rasi: ./config/rofi.rasi
+    ~/.config/i3status: ./config/i3status
