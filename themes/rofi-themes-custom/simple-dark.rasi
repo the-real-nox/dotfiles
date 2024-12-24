@@ -37,6 +37,7 @@ window {
   y-offset : 26px;
 
   background-color: @bg1;
+  background-blur: true;
   border: 1px;
   border-color: @bg3;
   border-radius: 6px;
