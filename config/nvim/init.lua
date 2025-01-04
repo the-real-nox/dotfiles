@@ -1,1 +1,2 @@
-require('opts')
+require('config.lazy')
+require('config.opts')
