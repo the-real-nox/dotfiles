@@ -1,7 +1,9 @@
+local theme = require('lualine.themes.papercolor_dark')
+
 require('lualine').setup {
   options = {
     icons_enabled = true,
-    theme = 'papercolor',
+    theme = theme,
     component_separators = { left = '|', right = '|'},
     section_separators = { left = '█', right = '█'},
     disabled_filetypes = {
