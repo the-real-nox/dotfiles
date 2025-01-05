@@ -34,4 +34,9 @@ require("lazy").setup({
   install = { colorscheme = { "papercolor" } },
   -- automatically check for plugin updates
   checker = { enabled = true },
+  rocks = {
+    enabled = true,
+    hererocks = true
+  }
 })
+
