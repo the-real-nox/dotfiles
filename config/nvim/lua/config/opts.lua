@@ -1,5 +1,5 @@
 -- disable mouse
-vim.opt.mouse = nil
+vim.opt.mouse = ''
 
 -- colorscheme
 vim.o.background = 'dark'
