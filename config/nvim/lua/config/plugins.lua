@@ -1,15 +1,15 @@
 local rocks = {
-    'lunarmodules/luafilesystem'
+--    'lunarmodules/luafilesystem'
 }
 
 local lazy = {
-    'NLKNguyen/papercolor-theme',
     {
         'nvim-lualine/lualine.nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons' }
     },
     'nvim-tree/nvim-tree.lua',
-    'nvim-treesitter/nvim-treesitter'
+    'nvim-treesitter/nvim-treesitter',
+    'savq/melange-nvim'
 }
 
 vim.list_extend(lazy, rocks)
