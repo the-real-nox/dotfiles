@@ -9,7 +9,9 @@ local lazy = {
     },
     'nvim-tree/nvim-tree.lua',
     'nvim-treesitter/nvim-treesitter',
-    'savq/melange-nvim'
+    'savq/melange-nvim',
+    'ThePrimeagen/harpoon',
+    'nvim-lua/plenary.nvim'
 }
 
 vim.list_extend(lazy, rocks)
