@@ -1,5 +1,5 @@
 configuration {
-	modes: "drun,run";
+	modes: "drun,run,combi";
 /*	font: "mono 12";*/
 /*	location: 0;*/
 /*	yoffset: 0;*/
