@@ -1,4 +1,11 @@
-require('config.lazy_plugins.lualine')
-require('config.lazy_plugins.nvim-tree')
-require('config.lazy_plugins.nvim-treesitter')
-require('config.lazy_plugins.harpoon')
+-- function load(name)
+  --  local base_path = 'config.lazy_plugins.'
+  --  require('_' .. name)
+-- end
+
+local base_path = 'config.lazy_plugins.'
+
+require(base_path .. 'lualine')
+require(base_path .. 'nvim-tree')
+require(base_path .. 'nvim-treesitter')
+require(base_path .. 'harpoon')
