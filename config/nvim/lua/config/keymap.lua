@@ -19,7 +19,7 @@ map('n', '<leader>r', function ()
     initTabbar()
 end)
 map('n', '<leader>f', require('harpoon.ui').toggle_quick_menu)
-map('n', '<leader>s', function ()
+map('n', '<leader>ca', function ()
     vim.ui.input({ prompt ='Close harpooned tabs? ' }, function (input)
         if input == 'y' then
             harpoon_mark.clear_all()
