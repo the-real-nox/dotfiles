@@ -11,4 +11,4 @@ map('n', '<leader>l', '<C-w>l')
 
 -- Searching
 map('n', '<leader>s', ':%s/')
-map('v', '<leader>s', ':%s/')
+map('v', '<leader>s', ':s/')
