@@ -21,6 +21,13 @@
       ['<C-Space>'] = cmp.mapping.complete(),
       ['q'] = cmp.mapping.abort(),
       ['<Tab>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+      ['<C-k>'] = function ()
+        if cmp.visible_docs() then
+            cmp.mapping.close_docs()
+        else
+            cmp.mapping.open_docs()
+        end
+      end
     }),
     sources = cmp.config.sources({
       { name = 'nvim_lsp' },
