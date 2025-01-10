@@ -29,6 +29,13 @@ local lazy = {
     -- Snippets
     'L3MON4D3/LuaSnip',
     'saadparwaiz1/cmp_luasnip',
+
+    -- Autopairing
+    {
+        'windwp/nvim-autopairs',
+        event = "InsertEnter",
+        config = true
+    },
 }
 
 vim.list_extend(lazy,rocks)
