@@ -16,6 +16,8 @@ local lazy = {
     -- LSP
     'williamboman/mason.nvim',
     'williamboman/mason-lspconfig.nvim',
+    'WhoIsSethDaniel/mason-tool-installer.nvim',
+    'nvimtools/none-ls.nvim',
     'neovim/nvim-lspconfig',
 
     -- Auto-complete
@@ -35,6 +37,12 @@ local lazy = {
         'windwp/nvim-autopairs',
         event = "InsertEnter",
         config = true
+    },
+
+    -- Toggle-term
+    {
+      'akinsho/toggleterm.nvim',
+      version = "*"
     },
 }
 

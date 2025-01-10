@@ -6,11 +6,11 @@ local handlers = {
     end
 }
 
-local ensure_installed = {
-    "lua_ls"
+local lsp_server = {
+    "lua_ls",
 }
 
 require("mason-lspconfig").setup {
-    ensure_installed = ensure_installed,
+    ensure_installed = lsp_server,
     handlers = handlers,
 }
