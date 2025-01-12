@@ -4,6 +4,7 @@ vim.opt.mouse = ''
 -- colorscheme
 vim.o.background = 'dark'
 colorscheme = 'melange'
+vim.o.termguicolors = true
 local isOK = pcall(vim.cmd, 'colorscheme ' .. colorscheme)
 if not isOK then
     vim.notify('Colorscheme ' .. colorscheme .. ' not working')

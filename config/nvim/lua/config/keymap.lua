@@ -27,3 +27,8 @@ map('n', '<leader>ca', function ()
         end
     end)
 end)
+
+
+-- Terminal
+map('t', '<M-q>', [[<C-\><C-n>:ToggleTerm<CR>]])
+map('n', '<leader>t', ':ToggleTerm<CR>')

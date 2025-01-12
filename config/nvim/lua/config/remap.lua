@@ -16,3 +16,4 @@ map('v', '<leader>s', ':s/')
 -- Undo / redo
 map('n', 'u', ':undo<CR>')
 map('n', 'r', ':redo<CR>')
+
