@@ -5,10 +5,13 @@ local harpoon_mark = require('harpoon.mark')
 
 function initTabbar()
     vim.cmd('redrawtabline')
-    vim.cmd('highlight! HarpoonInactive guibg=NONE guifg=NONE')
+    vim.cmd('highlight! HarpoonInactive guibg=NONE guifg=#94816e')
     vim.cmd('highlight! TabLineFill guibg=NONE guifg=white')
     vim.cmd('highlight! HarpoonActive guibg=NONE guifg=white')
+    vim.cmd('highlight! HarpoonNumberActive guibg=NONE guifg=#e49b5d')
+    vim.cmd('highlight! HarpoonNumberInactive guibg=NONE guifg=#94816e')
 end
+initTabbar()
 
 map('n', '<leader>a', function ()
     harpoon_mark.add_file()

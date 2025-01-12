@@ -7,7 +7,7 @@ local handlers = {
 }
 
 local lsp_server = {
-    "lua_ls",
+    "lua_ls","clangd", "html", "cssls", "ts_ls"
 }
 
 require("mason-lspconfig").setup {
