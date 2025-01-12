@@ -20,5 +20,3 @@ require("nvim-tree").setup({
   },
 })
 
--- Needed here since nvim needs to be loaded first
-vim.keymap.set('n', '<leader>pf', function () vim.cmd('NvimTreeToggle') end )

@@ -1,4 +1,6 @@
 local map = vim.keymap.set
+-- Nvim-Tree
+vim.keymap.set('n', '<leader>pf', function () vim.cmd('NvimTreeToggle') end )
 
 -- Harpoon
 local harpoon_mark = require('harpoon.mark')
@@ -13,16 +15,16 @@ function initTabbar()
 end
 initTabbar()
 
-map('n', '<leader>a', function ()
+map('n', '<leader>ha', function ()
     harpoon_mark.add_file()
     initTabbar()
 end)
-map('n', '<leader>r', function ()
+map('n', '<leader>hr', function ()
     harpoon_mark.rm_file(harpoon_mark.get_current_index())
     initTabbar()
 end)
-map('n', '<leader>f', require('harpoon.ui').toggle_quick_menu)
-map('n', '<leader>ca', function ()
+map('n', '<leader>hf', require('harpoon.ui').toggle_quick_menu)
+map('n', '<leader>hc', function ()
     vim.ui.input({ prompt ='Close harpooned tabs? ' }, function (input)
         if input == 'y' then
             harpoon_mark.clear_all()
@@ -35,3 +37,10 @@ end)
 -- Terminal
 map('t', '<M-q>', [[<C-\><C-n>:ToggleTerm<CR>]])
 map('n', '<leader>t', ':ToggleTerm<CR>')
+
+-- Telescope
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
+vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
+vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })

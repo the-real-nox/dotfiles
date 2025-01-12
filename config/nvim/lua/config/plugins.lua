@@ -12,6 +12,10 @@ local lazy = {
     'savq/melange-nvim',
     'ThePrimeagen/harpoon',
     'nvim-lua/plenary.nvim',
+    {
+    'nvim-telescope/telescope.nvim',
+     dependencies = { 'nvim-lua/plenary.nvim' }
+    },
 
     -- LSP
     'williamboman/mason.nvim',
