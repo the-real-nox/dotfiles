@@ -16,8 +16,12 @@ end
 initTabbar()
 
 map('n', '<leader>ha', function ()
-    harpoon_mark.add_file()
-    initTabbar()
+    if vim.loop.fs_stat(vim.fn.expand('%:p')) ~= nil then
+        harpoon_mark.add_file()
+        initTabbar()
+    else
+        vim.notify('Save file before adding it to harpoon!')
+    end
 end)
 map('n', '<leader>hr', function ()
     harpoon_mark.rm_file(harpoon_mark.get_current_index())
