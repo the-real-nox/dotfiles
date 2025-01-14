@@ -68,6 +68,9 @@ bindsym $mod+Return exec kitty
 # kill focused window
 bindsym $mod+q kill
 
+# xcolor shortcut
+bindsym $mod+p exec xcolor -s
+
 # lock screen
 bindsym $mod+BackSpace exec --no-startup-id light-locker-command -l
 # start dmenu (a program launcher)
