@@ -69,7 +69,7 @@ bindsym $mod+Return exec kitty
 bindsym $mod+q kill
 
 # xcolor shortcut
-bindsym $mod+p exec xcolor -s
+bindsym $mod+p exec --no-startup-id xcolor -s
 
 # lock screen
 bindsym $mod+BackSpace exec --no-startup-id light-locker-command -l
