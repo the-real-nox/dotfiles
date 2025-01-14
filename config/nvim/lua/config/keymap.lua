@@ -50,7 +50,7 @@ map("n", "<leader>hl", function() harpoon:list():next() end)
 
 
 -- Terminal
-map('t', '<M-q>', [[<C-\><C-n>:ToggleTerm<CR>]])
+map('t', '<M-q>', [[<C-\><C-n>]])
 map('n', '<leader>t', ':ToggleTerm<CR>')
 
 -- Telescope
