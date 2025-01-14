@@ -30,6 +30,9 @@ font pango:Roboto 12
 # Start lxpolkit as polkit-agent
 exec --no-startup-id /usr/bin/lxpolkit
 
+# Set the wallpaper. This script runs `feh`. Not part of this since the paths are user-dependent
+exec --no-startup-id set-wallpaper
+
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
