@@ -1,10 +1,10 @@
 local map = vim.keymap.set
 -- Nvim-Tree
-vim.keymap.set('n', '<leader>pf', function () vim.cmd('NvimTreeToggle') end )
+vim.keymap.set('n', '<leader>pf', ':NvimTreeToggle<CR>', { silent = true })
 
 -- Harpoon
 local harpoon_mark = require('harpoon.mark')
-
+local harpoon_ui = require('harpoon.ui')
     -- some stylistic goodies
 function initTabbar()
     vim.cmd('redrawtabline')
@@ -17,7 +17,7 @@ end
 initTabbar()
 
     -- add a file to harpoon
-map('n', '<leader>ha', function ()
+map('n', '<leader>pa', function ()
     if vim.loop.fs_stat(vim.fn.expand('%:p')) ~= nil then
         harpoon_mark.add_file()
         initTabbar()
@@ -27,16 +27,16 @@ map('n', '<leader>ha', function ()
 end)
 
     -- remove file from harpoon
-map('n', '<leader>hr', function ()
+map('n', '<leader>pr', function ()
     harpoon_mark.rm_file(harpoon_mark.get_current_index())
     initTabbar()
 end)
 
     -- toggle harpoon-quick-menu
-map('n', '<leader>hf', require('harpoon.ui').toggle_quick_menu)
+map('n', '<leader>pq', harpoon_ui.toggle_quick_menu)
 
     -- close all files
-map('n', '<leader>hc', function ()
+map('n', '<leader>pc', function ()
     vim.ui.input({ prompt ='Close harpooned tabs? ' }, function (input)
         if input == 'y' then
             harpoon_mark.clear_all()
@@ -45,8 +45,9 @@ map('n', '<leader>hc', function ()
     end)
 end)
 
-map("n", "<leader>hh", function() harpoon:list():prev() end)
-map("n", "<leader>hl", function() harpoon:list():next() end)
+map("n", "<leader><S-Tab>", harpoon_ui.nav_prev)
+map("n", "<leader><Tab>", harpoon_ui.nav_next)
+
 
 
 -- Terminal
