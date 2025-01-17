@@ -16,6 +16,7 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.softtabstop = 4
 vim.opt.list = true
+
 vim.api.nvim_create_autocmd('BufEnter', {
     pattern = '*',
     callback = function()
