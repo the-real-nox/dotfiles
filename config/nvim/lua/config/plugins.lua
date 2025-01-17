@@ -39,7 +39,10 @@ local lazy = {
 
     -- Snippets
     'L3MON4D3/LuaSnip',
-    'saadparwaiz1/cmp_luasnip',
+    {
+        'L3MON4D3/LuaSnip',
+        dependencies = { 'rafamadriz/friendly-snippets' },
+    },
 
     -- Autopairing
     {
@@ -47,6 +50,7 @@ local lazy = {
         event = "InsertEnter",
         config = true
     },
+    'windwp/nvim-ts-autotag',
 
     -- Toggle-term
     {
