@@ -18,12 +18,9 @@ local lazy = {
     },
     {
         'MaximilianLloyd/ascii.nvim',
-	dependencies = { 'MunifTanjim/nui.nvim' }
+        dependencies = { 'MunifTanjim/nui.nvim' }
     },
-    {
-        'MeanderingProgrammer/dashboard.nvim',
-        event = 'VimEnter',
-    },
+    'nvimdev/dashboard-nvim',
 
     -- LSP
     'williamboman/mason.nvim',

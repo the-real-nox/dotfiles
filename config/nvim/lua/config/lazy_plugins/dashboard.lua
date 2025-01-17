@@ -1,23 +1,8 @@
 require('dashboard').setup({
-    -- Dashboard header
-    header = require('ascii').art.text.neovim.sharp,
-    -- Format to display date in
-    date_format = nil,
-    -- List of directory paths, or functions that return paths
-    directories = {},
-    -- Sections to add at bottom, these can be string references to
-    -- functions in sections.lua, custom strings, or custom functions
-    footer = {},
-    -- Gets called after directory is changed and is provided with the
-    -- directory path as an argument
-    on_load = function(path)
-        -- Do nothing
-    end,
-    -- Highlight groups to use for various components
-    highlight_groups = {
-        header = 'Constant',
-        icon = 'Type',
-        directory = 'Delimiter',
-        hotkey = 'Statement',
-    },
+    theme = 'hyper', --  theme is doom and hyper default is hyper
+    config = {
+        header = require('ascii').art.text.neovim.sharp, -- type is table def
+        packages = { enable = true }, -- show how many plugins neovim loaded
+        footer = vim.version()
+     },   --  config used for theme 
 })
