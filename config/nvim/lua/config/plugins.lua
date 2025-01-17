@@ -13,8 +13,16 @@ local lazy = {
     'ThePrimeagen/harpoon',
     'nvim-lua/plenary.nvim',
     {
-    'nvim-telescope/telescope.nvim',
-     dependencies = { 'nvim-lua/plenary.nvim' }
+       'nvim-telescope/telescope.nvim',
+        dependencies = { 'nvim-lua/plenary.nvim' }
+    },
+    {
+        'MaximilianLloyd/ascii.nvim',
+	dependencies = { 'MunifTanjim/nui.nvim' }
+    },
+    {
+        'MeanderingProgrammer/dashboard.nvim',
+        event = 'VimEnter',
     },
 
     -- LSP
