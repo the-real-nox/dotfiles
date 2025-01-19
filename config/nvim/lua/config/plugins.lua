@@ -38,10 +38,13 @@ local lazy = {
     'hrsh7th/nvim-cmp',
 
     -- Snippets
-    'L3MON4D3/LuaSnip',
     {
         'L3MON4D3/LuaSnip',
-        dependencies = { 'rafamadriz/friendly-snippets' },
+        build = "make install_jsregexp",
+        dependencies = { 
+            'rafamadriz/friendly-snippets',
+            'saadparwaiz1/cmp_luasnip',
+        },
     },
 
     -- Autopairing
