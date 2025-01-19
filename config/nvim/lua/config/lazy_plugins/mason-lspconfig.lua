@@ -8,7 +8,9 @@ local lsp_server = {
     "html",
     "cssls",
     "ts_ls",
+    "jsonls"
 }
+
 local lspconfig = require("lspconfig")
 
 local handlers = {
