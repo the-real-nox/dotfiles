@@ -28,3 +28,6 @@ vim.api.nvim_create_autocmd('BufEnter', {
 
 -- enable line numbers
 vim.opt.number = true
+
+-- clipboard
+vim.opt.clipboard = "unnamedplus"

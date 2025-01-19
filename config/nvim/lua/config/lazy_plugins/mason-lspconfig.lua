@@ -1,13 +1,21 @@
-local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
+
+local lsp_server = {
+    "lua_ls",
+    "clangd",
+    "html",
+    "cssls",
+    "ts_ls",
+}
 local lspconfig = require("lspconfig")
 
 local handlers = {
-    function (name)
-        lspconfig[name].setup({capabilities = capabilities})
+    function(name)
+        lspconfig[name].setup({ capabilities = capabilities })
     end,
-    ["html"] = function ()
+    ["html"] = function()
         lspconfig.html.setup({
             capabilities = capabilities,
             on_attach = function(client, bufnr)
@@ -27,16 +35,12 @@ local handlers = {
                         references = true, -- Enable hover references
                     },
                 },
-            }
-           })
-    end
+            },
+        })
+    end,
 }
 
-local lsp_server = {
-    "lua_ls","clangd", "html", "cssls", "ts_ls"
-}
-
-require("mason-lspconfig").setup {
+require("mason-lspconfig").setup({
     ensure_installed = lsp_server,
     handlers = handlers,
-}
+})
