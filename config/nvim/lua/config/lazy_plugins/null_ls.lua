@@ -5,7 +5,7 @@ local formatters = {
         extra_args = { "--indent-type", "Spaces" },
     },
     prettier = {
-        extra_args = { "--use-tabs", "false" },
+        extra_args = { "--use-tabs", "false", "--tab-width", vim.opt.tabstop },
     },
 }
 
