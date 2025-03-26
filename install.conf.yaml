@@ -10,3 +10,4 @@
     ~/.config/rofi/config.rasi: ./config/rofi.rasi
     ~/.config/i3status: ./config/i3status
     ~/.config/nvim: ./config/nvim
+    ~/.config/kitty: ./config/kitty
