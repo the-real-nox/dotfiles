@@ -1,4 +1,6 @@
 local map = vim.keymap.set
+local opts = { silent = true, noremap = true}
+
 -- Nvim-Tree
 vim.keymap.set('n', '<leader>pf', ':NvimTreeToggle<CR>', { silent = true })
 
@@ -63,3 +65,11 @@ vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help ta
 
 -- Null-ls
 map({ 'n', 'i' }, '<C-f>', ':lua vim.lsp.buf.format()<CR>', { noremap = true, silent = true })
+
+--  nvim-lspconfig
+vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+vim.keymap.set('n', 'gD', vim.lsp.buf.type_definition, opts)
+vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
+vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
+vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
+vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)

@@ -31,3 +31,6 @@ vim.opt.number = true
 
 -- clipboard
 vim.opt.clipboard = "unnamedplus"
+
+-- disable line wrap
+vim.opt.wrap = false

@@ -21,7 +21,12 @@ local lazy = {
         dependencies = { "MunifTanjim/nui.nvim" },
     },
     "nvimdev/dashboard-nvim",
-    "BlackLight/nvim-http",
+    {
+        'Pocco81/auto-save.nvim',
+        config = {
+            enable = true
+        }
+    },
 
     -- LSP
     "williamboman/mason.nvim",
