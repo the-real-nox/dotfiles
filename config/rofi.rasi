@@ -149,4 +149,4 @@ configuration {
       sorting-method:    "name";
   }
 }
-@theme "/home/georg/.local/share/rofi/themes/theme.rasi"
+@theme "~/.local/share/rofi/themes/theme.rasi"
