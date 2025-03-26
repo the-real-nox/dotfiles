@@ -1,4 +1,3 @@
-do
     -- Specifies where to install/use rocks.nvim
     local install_location = vim.fs.joinpath(vim.fn.stdpath("data") --[[@as string]], "rocks")
 
@@ -27,8 +26,6 @@ do
     vim.opt.runtimepath:append(
         vim.fs.joinpath(rocks_config.rocks_path, "lib", "luarocks", "rocks-5.1", "rocks.nvim", "*")
     )
-end
-
 -- If rocks.nvim is not installed then install it!
 if not pcall(require, "rocks") then
     local rocks_location = vim.fs.joinpath(vim.fn.stdpath("cache") --[[@as string]], "rocks.nvim")

@@ -1,7 +1,3 @@
-local rocks = {
-    --    'lunarmodules/luafilesystem'
-}
-
 local lazy = {
     {
         "nvim-lualine/lualine.nvim",
@@ -22,9 +18,9 @@ local lazy = {
     },
     "nvimdev/dashboard-nvim",
     {
-        'Pocco81/auto-save.nvim',
+        "Pocco81/auto-save.nvim",
         config = {
-            enable = true
+             enabled = true,
         }
     },
 
@@ -68,5 +64,4 @@ local lazy = {
     },
 }
 
-vim.list_extend(lazy, rocks)
 return lazy

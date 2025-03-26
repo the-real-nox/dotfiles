@@ -21,7 +21,7 @@ mapping = cmp.mapping.preset.insert({
   ['<S-Tab>'] = cmp.mapping.select_prev_item(),
   ['<Esc>'] = cmp.mapping.abort(),
   ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-  ['<C-k>'] = function ()
+  ['<C-p>'] = function ()
     if cmp.visible_docs() then
         cmp.mapping.close_docs()
     else
