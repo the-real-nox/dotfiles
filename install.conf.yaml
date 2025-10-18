@@ -7,3 +7,4 @@
     ~/.config/hypr: config/hypr/
     ~/.config/waybar: config/waybar/
     ~/.config/rofi: config/rofi/
+    ~/.config/.tmux.conf: config/.tmux.conf
