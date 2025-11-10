@@ -8,3 +8,4 @@
     ~/.config/waybar: config/waybar/
     ~/.config/rofi: config/rofi/
     ~/.tmux.conf: config/.tmux.conf
+    ~/.zshrc: config/.zshrc
