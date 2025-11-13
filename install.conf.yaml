@@ -7,5 +7,6 @@
     ~/.config/hypr: config/hypr/
     ~/.config/waybar: config/waybar/
     ~/.config/rofi: config/rofi/
+    ~/.config/kitty: config/kitty
     ~/.tmux.conf: config/.tmux.conf
     ~/.zshrc: config/.zshrc
