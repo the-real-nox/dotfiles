@@ -10,3 +10,6 @@
     ~/.config/kitty: config/kitty
     ~/.tmux.conf: config/.tmux.conf
     ~/.zshrc: config/.zshrc
+    ~/.config/bspwm/: config/bspwm/
+    ~/.config/sxhkd/: config/sxhkd/
+    ~/.config/polybar/: config/polybar/
