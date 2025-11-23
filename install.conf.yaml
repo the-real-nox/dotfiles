@@ -13,3 +13,4 @@
     ~/.config/bspwm/: config/bspwm/
     ~/.config/sxhkd/: config/sxhkd/
     ~/.config/polybar/: config/polybar/
+    ~/.config/picom/: config/picom/
