@@ -18,5 +18,6 @@ bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 
 feh --bg-scale .wallpaper.png
+nm-applet &
 picom &
 polybar &
