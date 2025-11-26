@@ -43,7 +43,7 @@ super + g
 #
 
 # set the window state
-super + {t,shift + t,s}
+super + {t,shift + t,v}
 	bspc node -t {tiled,pseudo_tiled,floating}
 super + f
 	bspc node -t {fullscreen, tiled}
@@ -126,3 +126,11 @@ super + {Left,Down,Up,Right}
 #
 super + n
 	betterlockscreen --lock blur
+
+super + s
+	flameshot gui
+
+super + shift + s
+	~/.config/polybar/scripts/power_menu/run.sh
+
+
