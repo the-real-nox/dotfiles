@@ -11,7 +11,7 @@
     /* Put the colors you are going to use here and do not define them anywhere else */
 
     blue2:      #33ebd8; 
-    green:      #65f3bd;
+    green:      #64f3bd;
     green2:     #96f8a0;
     green3:     #c7fa85;
     yellow:     #f9f871;
@@ -19,6 +19,7 @@
     blue:        #0e225d;
     white:       #ffffff;
     blue-light:  #6C8FF0;
+    red: #bd5046;
     /***** [ Elements ] *****/ 
 
     /* Put the colors you defined in [ Custom Colors ] only here */
@@ -44,7 +45,7 @@
     cursor-color:         @white;
     highlight:            @blue-light;
     normal:               @green;
-    selected:             @blue;
+    selected:             @red;
     active:               @green;
     urgent:               red;
 

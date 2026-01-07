@@ -1,2 +1,2 @@
 #!/bin/sh
-rofi -show power-menu -modi power-menu:~/.config/polybar/scripts/power_menu/power_menu.sh
+rofi -show power-menu -modi power-menu:~/.config/polybar/scripts/power_menu/power_menu.sh -theme ~/.config/rofi/custom-theme/powermenu.rasi

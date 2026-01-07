@@ -21,7 +21,7 @@ window {
     transparency: "screenshort";
     background-color: @bg;
     text-color: @text;
-    border-radius: 10px;
+    border-radius: 5px;
     width: 500px;
     blur: 50;
     anchor: center;
@@ -111,7 +111,7 @@ element normal urgent {
 }
 
 element selected {
-    border-radius: 2%;
+    border-radius: 5px;
     background-color: @selected;
     color: @text;
 }
