@@ -111,6 +111,7 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
+alias pa='source .venv/bin/activate'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
