@@ -1,6 +1,21 @@
 #! /bin/sh
 
-pgrep -x sxhkd > /dev/null || sxhkd &
+### START SETUP SXHKD ###
+SXHKD_FIFO_DIR="$HOME/.cache/sxhkd"
+
+if [ ! -d "$SXHKD_FIFO_DIR" ]; then
+    mkdir -p "$SXHKD_FIFO_DIR"
+fi
+
+SXHKD_FIFO="$SXHKD_FIFO_DIR/status.fifo"
+
+if [ ! -e "$SXHKD_FIFO" ]; then
+    mkfifo "$SXHKD_FIFO"
+fi
+
+pgrep -x sxhkd > /dev/null || sxhkd -s "$SXHKD_FIFO" &
+### END SETUP SXHKD ###
+
 
 bspc monitor -d . . . .
 
@@ -19,7 +34,9 @@ bspc rule -a Screenkey manage=off
 
 feh --bg-scale .wallpaper.png
 xrdb ~/.Xresources
-./scripts/autostart-onedrive.sh
+./scripts/autostart-onedrive.sh &
 nm-applet &
 picom &
+
+~/.config/bspwm/scripts/sxhkd-status.sh &
 polybar &
