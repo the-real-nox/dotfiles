@@ -16,6 +16,7 @@ fi
 pgrep -x sxhkd > /dev/null || sxhkd -s "$SXHKD_FIFO" &
 ### END SETUP SXHKD ###
 
+xsetroot -cursor_name left_ptr & # force-show cursor
 
 bspc monitor -d . . . .
 
