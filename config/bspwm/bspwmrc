@@ -16,6 +16,8 @@ fi
 pgrep -x sxhkd > /dev/null || sxhkd -s "$SXHKD_FIFO" &
 ### END SETUP SXHKD ###
 
+CONF_ROOT="$HOME/.config/bspwm"
+
 xsetroot -cursor_name left_ptr & # force-show cursor
 
 bspc monitor -d . . . .
@@ -36,12 +38,13 @@ bspc rule -a Chromium desktop='^2'
 bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
+. $CONF_ROOT/generated_rules
 
 feh --bg-scale .wallpaper.png
 xrdb ~/.Xresources
-~/.config/bspwm/scripts/autostart-onedrive.sh &
+$CONF_ROOT/scripts/autostart-onedrive.sh &
 nm-applet &
 picom &
 
-~/.config/bspwm/scripts/sxhkd-status.sh &
+$CONF_ROOT/scripts/sxhkd-status.sh &
 polybar &
