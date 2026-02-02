@@ -20,7 +20,7 @@ CONF_ROOT="$HOME/.config/bspwm"
 
 xsetroot -cursor_name left_ptr & # force-show cursor
 
-bspc monitor -d . . . .
+bspc monitor -d . . . . . . . .
 
 bspc config border_width            3
 bspc config window_gap             12
