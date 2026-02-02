@@ -40,6 +40,8 @@ bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 . $CONF_ROOT/generated_rules
 
+wmname LG3D &
+
 feh --bg-scale .wallpaper.png
 xrdb ~/.Xresources
 $CONF_ROOT/scripts/autostart-onedrive.sh &
