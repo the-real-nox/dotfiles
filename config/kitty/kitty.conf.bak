@@ -1,6 +1,5 @@
 # background #110613
-background_opacity 1
-#0.8
+background_opacity 0.8
 shell /bin/zsh
 enable_audio_bell no
 
@@ -11,10 +10,10 @@ italic_font      auto
 bold_italic_font auto
 # END_KITTY_FONTS
 
-# geninclude ~/.config/kitty/theme.sh
+geninclude ~/.config/kitty/theme.sh
 
 
 # BEGIN_KITTY_THEME
-# Default
+# Dracula
 include current-theme.conf
 # END_KITTY_THEME
