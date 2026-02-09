@@ -40,6 +40,14 @@ bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 . $CONF_ROOT/generated_rules
 
+# Modifier key used with the mouse (usually Alt or Super)
+bspc config pointer_modifier super
+
+# Mouse actions while holding the modifier
+bspc config pointer_action1 move
+bspc config pointer_action2 resize_side
+bspc config pointer_action3 resize_corner
+
 wmname LG3D &
 
 feh --bg-scale .wallpaper.png
