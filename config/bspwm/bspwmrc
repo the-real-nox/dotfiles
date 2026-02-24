@@ -57,4 +57,4 @@ nm-applet &
 picom &
 
 $CONF_ROOT/scripts/sxhkd-status.sh &
-polybar &
+polybar -c ~/.config/polybar/conf/multicolor/config.ini &

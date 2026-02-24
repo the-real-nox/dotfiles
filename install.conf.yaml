@@ -14,3 +14,4 @@
     ~/.config/sxhkd/: config/sxhkd/
     ~/.config/polybar/: config/polybar/
     ~/.config/picom/: config/picom/
+    ~/.config/herbstluftvm/: config/herbstluftwm/
