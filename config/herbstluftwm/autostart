@@ -101,7 +101,7 @@ hc keybind $Mod-space                                                           
 
 # custom
 hc keybind $Mod-d spawn rofi -show drun -config ~/.config/rofi/conf/simple/config.rasi 
-hc keybind $Mod-n spawn betterlockscreen --lock blur
+hc keybind $Mod-n spawn i3lock -i .wallpaper.png --time-str="%H:%M:%S" --date-str="" --time-pos="x+w/2:y+350" --time-color=ffffffff --clock --time-font=Bahnschrift --time-size=64
 hc keybind $Mod-s spawn flameshot gui
 hc keybind $Mod-Shift-c spawn bash -c "xcolor | tr -d '\n' | xclip -selection clipboard"
 
@@ -129,7 +129,7 @@ hc set frame_border_width 1
 hc set show_frame_decorations 'focused_if_multiple'
 hc set frame_bg_transparent on
 hc set frame_transparent_width 2
-hc set frame_gap 4
+hc set frame_gap 0
 
 hc attr theme.title_height 15
 hc attr theme.title_when always
