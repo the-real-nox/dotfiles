@@ -1,0 +1,20 @@
+* {
+    xbg:    #000000;
+    xfg:    white;
+    x0:     #285577;
+    x1:     pink;
+    x2:     yellow;
+    x3:     black;
+    x4:     white;
+    x5:     cyan;
+    x6:     white;
+    x7:     white;
+    x8:     white;
+    x9:     white;
+    x10:    white;
+    x11:    white;
+    x12:    white;
+    x13:    white;
+    x14:    white;
+    x15:    white;
+}
