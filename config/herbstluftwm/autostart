@@ -200,3 +200,4 @@ done
 # startup apps
 nm-applet &
 xrdb ~/.Xresources
+feh --bg-scale .wallpaper.png
