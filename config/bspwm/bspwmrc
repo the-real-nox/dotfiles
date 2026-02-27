@@ -54,7 +54,7 @@ feh --bg-scale .wallpaper.png
 xrdb ~/.Xresources
 $CONF_ROOT/scripts/autostart-onedrive.sh &
 nm-applet &
-picom &
+picom --config ~/.config/picom/conf/rounded.conf &
 
 $CONF_ROOT/scripts/sxhkd-status.sh &
 polybar -c ~/.config/polybar/conf/multicolor/config.ini &
