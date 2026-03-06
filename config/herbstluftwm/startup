@@ -5,6 +5,13 @@ nm-applet &
 picom --config ~/.config/picom/conf/simple.conf &
 xrdb ~/.Xresources
 feh --bg-scale .wallpaper.png
+wired &
+
+# find the panel
+for monitor in $(polybar -m | sed -e 's/:.*$//g') ; do
+    # start it on each monitor
+    MONITOR=$monitor polybar -c ~/.config/polybar/conf/simple/config.ini &
+done
 
 STARTUP_DIR="$HOME/.config/herbstluftwm/startup_scripts"
 for filename in "$STARTUP_DIR"/*; do
