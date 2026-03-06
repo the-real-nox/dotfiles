@@ -38,8 +38,6 @@ audio_out () {
 
     notify-send "" "$volume" --hint="string:wired-tag:sys_notify" \
             -i icons/volume_change.png -h int:value:"$volume" -t 1100
-
-
 }
 
 case "${OP}" in

@@ -15,3 +15,4 @@
     ~/.config/polybar/: config/polybar/
     ~/.config/picom/: config/picom/
     ~/.config/herbstluftwm/: config/herbstluftwm/
+    ~/.config/wired/: config/wired/
