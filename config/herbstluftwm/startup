@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+# startup apps
+nm-applet &
+picom --config ~/.config/picom/conf/simple.conf &
+xrdb ~/.Xresources
+feh --bg-scale .wallpaper.png
+
+STARTUP_DIR="$HOME/.config/herbstluftwm/startup_scripts"
+for filename in "$STARTUP_DIR"/*; do
+    . "$filename"
+done
