@@ -13,37 +13,63 @@ positional argument:
 
 OP=$1
 
-fail () {
+fail() {
     echo "$HELP"
 }
 
-audio_out () {
+ICON_DIR="$HOME/.config/wired/sys_notify/icons"
+
+audio_out() {
     wpctl_output="$(wpctl get-volume @DEFAULT_SINK@)"
 
     # Get info wheter or not we're muted from wire-plumber
     if [ "$(echo "$wpctl_output" | grep -oF \[MUTED\])" = \[MUTED\] ]; then
         notify-send "" "" --hint="string:wired-tag:sys_notify" \
-            -i icons/mute.png -t 900
+            -i "$ICON_DIR"/mute.png -t 900
         exit 0
     fi
 
-    volume="$(bc -l <<< "$(echo "$wpctl_output" | grep -oE "[[:digit:]]{1,2}\.[[:digit:]]{2} | grep -oE [[:digit:]]{1,2}") * 10")"
-    echo "$volume"
+    volume="$(bc -l <<<"scale=0; ($(echo "$wpctl_output" | grep -oE "[[:digit:]]{0,2}\.[[:digit:]]{2}") * 100) / 1")"
 
-    if [ "$volume" = "0" ]; then
+    if [ "$volume" = "" ]; then
         notify-send "" "" --hint="string:wired-tag:sys_notify" \
-            -i icons/unmute.png -t 900
+            -i "$ICON_DIR"/unmute.png -t 900
         exit 0
     fi
 
     notify-send "" "$volume" --hint="string:wired-tag:sys_notify" \
-            -i icons/volume_change.png -h int:value:"$volume" -t 1100
+        -i "$ICON_DIR"/volume_change.png -h int:value:"$volume" -t 1100
+}
+
+audio_in() {
+    wpctl_output="$(wpctl get-volume @DEFAULT_SOURCE@)"
+
+    # Get info wheter or not we're muted from wire-plumber
+    if [ "$(echo "$wpctl_output" | grep -oF \[MUTED\])" = \[MUTED\] ]; then
+        notify-send "" "" --hint="string:wired-tag:sys_notify" \
+            -i "$ICON_DIR"/mic_mute.png -t 900
+        exit 0
+    fi
+
+    notify-send "" "$volume" --hint="string:wired-tag:sys_notify" \
+        -i "$ICON_DIR"/mic.png
+}
+
+backlight() {
+    brightness="$(brightnessctl info | grep -oE "([[:digit:]]{1,2}%)" | grep -oE "[[:digit:]]{1,2}")"
+
+    notify-send "" "$brightness" --hint="string:wired-tag:sys_notify" \
+        -i "$ICON_DIR"/light_full.png -h int:value:"$brightness" -t 1100
+
 }
 
 case "${OP}" in
-    audio_out) audio_out;;
-    audio_in) echo 'AUDIO_IN';;
-    backlight) echo 'BACKLIGHT';;
-    -h) fail;;
-    *) fail; exit 1;;
+    audio_out) audio_out ;;
+    audio_in) audio_in ;;
+    backlight) backlight ;;
+    -h) fail ;;
+    *)
+        fail
+        exit 1
+        ;;
 esac
