@@ -9,6 +9,8 @@ positional argument:
 \t- 'adio_in'  : call on mic state change
 \t- 'adio_out' : call on speaker state change
 \t- 'backlight': call on backlight state change
+\t- 'battery_level': display battery_level notification
+\t- 'charging_cable': display charging_cable status notification
 " "$0")
 
 OP=$1
@@ -61,13 +63,33 @@ backlight() {
 
 }
 
+battery_level() {
+    capacity="$(cat /sys/class/power_supply/BAT0/capacity)"
+
+    if [ "$capacity" -lt 20 ] && [ "$capacity" -gt 10 ]; then
+        notify-send -u critical "Battery" "Your battery is running low."
+        exit 0
+    fi
+
+    if [ "$capacity" -le 10 ]; then
+        notify-send "" "" -i "$(realpath icons/battery.png)" \
+            --hint="string:wired-tag:sys_notify"
+    fi
+}
+
+charging_cable() {
+    echo 'Cable'
+}
+
 case "${OP}" in
-    audio_out) audio_out ;;
-    audio_in) audio_in ;;
-    backlight) backlight ;;
-    -h) fail ;;
-    *)
-        fail
-        exit 1
-        ;;
+audio_out) audio_out ;;
+audio_in) audio_in ;;
+backlight) backlight ;;
+battery_level) battery_level ;;
+charging_cable) charging_cable ;;
+-h) fail ;;
+*)
+    fail
+    exit 1
+    ;;
 esac
