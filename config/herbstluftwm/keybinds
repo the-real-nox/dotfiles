@@ -89,28 +89,36 @@ hc keybind $Mod-space                                                           
                      . cycle_layout +1 vertical horizontal max vertical grid    \
                , cycle_layout +1
 
-# custom
+# rofi
 hc keybind $Mod-d spawn rofi -show drun -config ~/.config/rofi/conf/simple/config.rasi 
+hc keybind $Mod-e spawn rofi -modi emoji -show emoji -config ~/.config/rofi/conf/simple/config.rasi
+
+# lockscreen (i3-lock)
 hc keybind $Mod-n spawn i3lock -i .wallpaper.png --time-str="%H:%M:%S" --date-str="" --time-pos="x+w/2:y+350" --time-color=ffffffff --clock --time-font=Bahnschrift --time-size=64
+
+# screenshots (flameshot)
 hc keybind $Mod-s spawn flameshot gui
+
+# color-chooser (xcolor)
 hc keybind $Mod-Shift-c spawn bash -c "xcolor | tr -d '\n' | xclip -selection clipboard"
 
-# --- Brightness Control ---
-# Increase Brightness
+# > Brightness Control
+#    Increase Brightness
 hc keybind XF86MonBrightnessUp   spawn sh -c "brightnessctl set +10% && sys_notify backlight"
 # Decrease Brightness
 hc keybind XF86MonBrightnessDown spawn sh -c "brightnessctl set 10%- && sys_notify backlight"
-# --- PipeWire Volume Control (via wpctl) ---
-# Mute/Unmute (Targets the default audio output)
+
+# > PipeWire Volume Control (via wpctl)
+#    Mute/Unmute (Targets the default audio output)
 hc keybind XF86AudioMute         spawn sh -c "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle && sys_notify audio_out"
 
-# Mute/Unmute mic
+#    Mute/Unmute mic
 hc keybind XF86AudioMicMute      spawn sh -c "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle && sys_notify audio_in"
 
-# Lower Volume (Steps of 5%)
+#    Lower Volume (Steps of 5%)
 hc keybind XF86AudioLowerVolume  spawn sh -c "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- && sys_notify audio_out"
 
-# Raise Volume (Steps of 5%, capped at 100% usually)
+#    Raise Volume (Steps of 5%, capped at 100% usually)
 hc keybind XF86AudioRaiseVolume  spawn sh -c "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ -l 1.0 && sys_notify audio_out"
 
 # mouse
