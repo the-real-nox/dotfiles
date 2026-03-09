@@ -24,12 +24,6 @@
 
     // Wired will pause notifications if you are idle (no mouse or keyboard input) for longer than
     // `idle_threshold` seconds.
-    // Note that notifications will not be automatically unpaused on wake, and will need to be manually
-    // cleared, unless `unpause_on_input` is set to true.
-    // Also note that no distinction is made between manually paused and idle paused notifications.
-    // If `idle_threshold` is not specified, the behavior will be disabled entirely.
-    //idle_threshold: 3600,
-
     // Notifications will spawn paused, and have to be manually unpaused or cleared by the user,
     // unless `unpause_on_input` is also set.
     //notifications_spawn_paused: false,
@@ -93,8 +87,8 @@
         (
             name: "root",
             parent: "",
-            hook: Hook(parent_anchor: TR, self_anchor: TR),
-            offset: Vec2(x: -6.0, y: 40.0),
+            hook: Hook(parent_anchor: TL, self_anchor: TL),
+            offset: Vec2(x: 6.0, y: 45.0),
             render_anti_criteria: [Tag("sys_notify")],
             params: NotificationBlock((
                 monitor: 0,
@@ -134,15 +128,30 @@
             // https://github.com/Toqozz/wired-notify/wiki/TextBlock
             params: ScrollingTextBlock((
                 text: "%b",
-                font: "Arial Bold 11",
+                font: "Hasklug Nerd Font Bold 11",
                 color: Color(hex: "#ffffff"),
                 color_hovered: Color(hex: "#fbf1c7"),
-                padding: Padding(left: 7.0, right: 7.0, top: 5.0, bottom: 7.0),
-                width: (min: 150, max: 250),
+                padding: Padding(left: 7.0, right: 0.0, top: 5.0, bottom: 5.0),
+                width: (min: -1, max: 250),
                 scroll_speed: 0.1,
                 lhs_dist: 35.0,
                 rhs_dist: 35.0,
                 scroll_t: 1.0,
+            ))
+        ),
+        (
+            name: "time",
+            parent: "summary",
+            hook: Hook(parent_anchor: TR, self_anchor: TL),
+            offset: Vec2(x: 0.0, y: 0.0),
+            // https://github.com/Toqozz/wired-notify/wiki/TextBlock
+            params:  TextBlock((
+                text: "%t(%H:%M:%S)",
+                font: "Hasklug Nerd Font Mono Bold Italic 9",
+                color: Color(hex: "#ffffff"),
+                color_hovered: Color(hex: "#fbf1c7"),
+                padding: Padding(left: 3.0, right: 7.0, top: 6.0, bottom: 0.0),
+                dimensions: (width: (min: -1, max: -1), height: (min: -1, max: -1)),
             ))
         ),
         (
@@ -153,7 +162,7 @@
             // https://github.com/Toqozz/wired-notify/wiki/ScrollingTextBlock
             params: ScrollingTextBlock((
                 text: "%b",
-                font: "Arial 11",
+                font: "Hasklug Nerd Font 11",
                 color: Color(hex: "#ffffff"),
                 color_hovered: Color(hex: "#fbf1c7"),
                 padding: Padding(left: 7.0, right: 7.0, top: 5.0, bottom: 7.0),
