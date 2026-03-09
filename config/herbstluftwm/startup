@@ -2,7 +2,7 @@
 
 # startup apps
 nm-applet &
-picom --config ~/.config/picom/conf/simple.conf &
+picom --config ~/.config/picom/conf/simple.conf --vsync &
 xrdb ~/.Xresources
 feh --bg-scale .wallpaper.png
 wired &
