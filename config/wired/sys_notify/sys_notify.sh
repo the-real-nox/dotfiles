@@ -19,14 +19,14 @@ fail() {
     echo "$HELP"
 }
 
-ICON_DIR="$HOME/.config/wired/sys_notify/icons"
-
+ICONS_DEFAULT="$HOME/.config/wired/sys_notify/icons_default"
+ICONS_CRITICAL="$HOME/.config/wired/sys_notify/icons_critical"
 audio_out() {
     wpctl_output="$(wpctl get-volume @DEFAULT_SINK@)"
 
     if [ "$(echo "$wpctl_output" | grep -oF \[MUTED\])" = \[MUTED\] ]; then
         notify-send "" "" --hint="string:wired-tag:sys_notify" \
-            -i "$ICON_DIR"/mute.png -t 900
+            -i "$ICONS_DEFAULT"/mute.png -t 900
         exit 0
     fi
 
@@ -34,12 +34,12 @@ audio_out() {
 
     if [ "$volume" = "" ]; then
         notify-send "" "" --hint="string:wired-tag:sys_notify" \
-            -i "$ICON_DIR"/unmute.png -t 900
+            -i "$ICONS_DEFAULT"/unmute.png -t 900
         exit 0
     fi
 
     notify-send "" "$volume" --hint="string:wired-tag:sys_notify" \
-        -i "$ICON_DIR"/volume_change.png -h int:value:"$volume" -t 1100
+        -i "$ICONS_DEFAULT"/volume_change.png -h int:value:"$volume" -t 1100
 }
 
 audio_in() {
@@ -47,19 +47,19 @@ audio_in() {
 
     if [ "$(echo "$wpctl_output" | grep -oF \[MUTED\])" = \[MUTED\] ]; then
         notify-send "" "" --hint="string:wired-tag:sys_notify" \
-            -i "$ICON_DIR"/mic_mute.png -t 900
+            -i "$ICONS_DEFAULT"/mic_mute.png -t 900
         exit 0
     fi
 
     notify-send "" "$volume" --hint="string:wired-tag:sys_notify" \
-        -i "$ICON_DIR"/mic.png
+        -i "$ICONS_DEFAULT"/mic.png
 }
 
 backlight() {
     brightness="$(brightnessctl info | grep -oE "([[:digit:]]{1,3}%)" | grep -oE "[[:digit:]]{1,3}")"
 
     notify-send "" "$brightness" --hint="string:wired-tag:sys_notify" \
-        -i "$ICON_DIR"/light_full.png -h int:value:"$brightness" -t 1100
+        -i "$ICONS_DEFAULT"/light_full.png -h int:value:"$brightness" -t 1100
 
 }
 
@@ -72,7 +72,7 @@ battery_level() {
     fi
 
     if [ "$capacity" -le 10 ]; then
-        notify-send "" "" -i "$(realpath icons/battery.png)" \
+        notify-send "" "" -i "$ICONS_CRITICAL/battery.png)" \
             --hint="string:wired-tag:sys_notify"
     fi
 }

@@ -1,6 +1,6 @@
 from sys import argv
 from argparse import ArgumentParser
-from os.path import isdir, isfile
+from os.path import exists, isdir, isfile
 from re import fullmatch
 from bs4 import BeautifulSoup, Comment, Tag
 from cairosvg import svg2png
@@ -43,41 +43,53 @@ def main():
         html = BeautifulSoup('\n'.join(input.readlines()), 'html.parser')
 
     file_map = {}
-    current = ''
-
     body = html.find_all('body')
     if len(body) != 1:
         print('Invalid html!')
         exit(0)
     body = body[0]
 
-    for tag in body:
-        if isinstance(tag, Comment):
-            current = str(tag).lower().replace('-', '_').strip() + ".png"
-        elif isinstance(tag, Tag) and tag.name == 'svg':
-            _, _, v_x, v_y = [int(i) for i in  str(tag['viewbox']).split(' ')]
+    for i, tag in enumerate(body.find_all('png')):
+        name = i
 
-            # end_x = int(str(tag['width']).replace('px', ''))
-            # end_y = int(str(tag['height']).replace('px', ''))
-            #
-            # asp = v_x / v_y
+        if 'name' in tag.attrs:
+              name = tag.attrs['name']
 
-            tag['width'] = f'{x}px'
-            tag['height'] = f'{y}px'
-            # tag['viewBox'] = f'0 0 {end_x * asp} {end_y * asp}'
-            tag['fill'] = args.color
-            tag['stroke'] = args.color
-            #
-            tag['viewBox'] = f'0 0 {v_x} {v_y}'
-            tag['preserveAspectRatio'] = 'xMidYMid meet'
+        keep_color = 'keepcolor' in tag.attrs
+        out_dir = args.output
 
-            file_map.update({current: str(tag)})
+        if 'customout' in tag.attrs:
+            if exists(str(tag['customout'])):
+                out_dir = tag['customout']
+            else:
+                print(f'Invalid custom output-dir for {name}, using default!')
 
-    for filename, svg_content in file_map.items():
-        path = f'{args.output}/{filename}'
-        svg2png(bytestring=svg_content, write_to=path, output_width=x, output_height=y)
+        svg_tag = tag.find_next('svg')
+        if svg_tag == None:
+            print('Invalid svg-data!')
+            continue
 
-        print(f'Exported {path}...')
+        qualified_path = f'{out_dir}/{name}.png'
+
+        _, _, v_x, v_y = [int(i) for i in  str(svg_tag['viewbox']).split(' ')]
+
+        svg_tag['width'] = f'{x}px'
+        svg_tag['height'] = f'{y}px'
+
+        if not keep_color:
+            svg_tag['fill'] = args.color
+            svg_tag['stroke'] = args.color
+
+        svg_tag['viewBox'] = f'0 0 {v_x} {v_y}'
+        svg_tag['preserveAspectRatio'] = 'xMidYMid meet'
+
+        file_map.update({qualified_path: str(svg_tag)})
+
+
+    for qualified_path, svg_content in file_map.items():
+        svg2png(bytestring=svg_content, write_to=qualified_path, output_width=x, output_height=y)
+
+        print(f'Exported {qualified_path}...')
 
     print('Finished!')
 if __name__ == '__main__':
