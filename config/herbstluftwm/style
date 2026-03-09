@@ -17,7 +17,7 @@ hc set frame_gap 0
 
 hc attr theme.title_height 15
 hc attr theme.title_when always
-hc attr theme.title_font 'Dejavu Sans:pixelsize=12'  # example using Xft
+hc attr theme.title_font 'Hasklug Nerd Font:pixelsize=12'  # example using Xft
 # hc attr theme.title_font '-*-fixed-medium-r-*-*-13-*-*-*-*-*-*-*'
 hc attr theme.title_depth 3  # space below the title's baseline
 hc attr theme.active.color '#285577ef'

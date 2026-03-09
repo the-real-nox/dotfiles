@@ -94,7 +94,7 @@ hc keybind $Mod-d spawn rofi -show drun -config ~/.config/rofi/conf/simple/confi
 hc keybind $Mod-e spawn rofi -modi emoji -show emoji -config ~/.config/rofi/conf/simple/config.rasi
 
 # lockscreen (i3-lock)
-hc keybind $Mod-n spawn i3lock -i .wallpaper.png --time-str="%H:%M:%S" --date-str="" --time-pos="x+w/2:y+350" --time-color=ffffffff --clock --time-font=Bahnschrift --time-size=64
+hc keybind $Mod-n spawn i3lock -i ~/.wallpaper.png --time-str="%H:%M:%S" --date-str="" --time-pos="x+w/2:y+350" --time-color=ffffffff --clock --time-font=HasklugNerdFont --time-size=64
 
 # screenshots (flameshot)
 hc keybind $Mod-s spawn flameshot gui
