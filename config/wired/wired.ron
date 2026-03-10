@@ -150,7 +150,7 @@
                 font: "Hasklug Nerd Font Mono Bold Italic 9",
                 color: Color(hex: "#ffffff"),
                 color_hovered: Color(hex: "#fbf1c7"),
-                padding: Padding(left: 3.0, right: 7.0, top: 6.0, bottom: 0.0),
+                padding: Padding(left: 3.0, right: 7.0, top: 7.0, bottom: 0.0),
                 dimensions: (width: (min: -1, max: -1), height: (min: -1, max: -1)),
             ))
         ),
@@ -166,7 +166,7 @@
                 color: Color(hex: "#ffffff"),
                 color_hovered: Color(hex: "#fbf1c7"),
                 padding: Padding(left: 7.0, right: 7.0, top: 5.0, bottom: 7.0),
-                width: (min: 150, max: 250),
+                width: (min: -1, max: 250),
                 scroll_speed: 0.1,
                 lhs_dist: 35.0,
                 rhs_dist: 35.0,
